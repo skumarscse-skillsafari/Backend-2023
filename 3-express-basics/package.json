@@ -1,0 +1,23 @@
+{
+  "name": "3-express-basics",
+  "version": "1.0.0",
+  "description": "This is to set up express environment",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "node",
+    "request",
+    "response"
+  ],
+  "author": "SkillSafai",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+}
