@@ -2,10 +2,10 @@
   "name": "3-express-basics",
   "version": "1.0.0",
   "description": "This is to set up express environment",
-  "main": "server.js",
+  "main": "middleware-use.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "nodemon middleware-use.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
