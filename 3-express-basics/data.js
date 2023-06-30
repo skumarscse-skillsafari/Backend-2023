@@ -272,5 +272,5 @@ export const users = [
   { id: 2, name: "Jack", age: 22, city: "Bangalore" },
   { id: 3, name: "Mary", age: 25, city: "Coimbatore" },
   { id: 4, name: "Robert", age: 28, city: "Mumbai" },
-  { id: 4, name: "Prince", age: 30, city: "Delhi" },
+  { id: 5, name: "Prince", age: 30, city: "Delhi" },
 ];
