@@ -13,7 +13,11 @@ app.get("/", (req, res) => {
 
 // Create User
 app.post("/user/create", (req, res) => {
-  res.status(201).json({ success: true, message: "User added successfully" });
+  console.log(req.body);
+  res.status(201).json({
+    success: true,
+    message: `User: ${req.body.username} is created successfully`,
+  });
 });
 
 app.listen(PORT, () =>

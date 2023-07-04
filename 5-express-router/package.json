@@ -1,0 +1,23 @@
+{
+  "name": "5-express-router",
+  "version": "1.0.0",
+  "description": "This is to demostrate express router",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "route",
+    "controller",
+    "mvc"
+  ],
+  "author": "SkillSafari",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+}
