@@ -16,6 +16,6 @@ export const createUser = (req, res) => {
 // http://localhost:5000/users
 export const getAllUsers = (req, res) => {
   User.find()
-    .then((users) => res.status(200).json({ success: true, response: users }))
+    .then((users) => res.status(200).json({ success: true, users: users }))
     .catch((err) => console.log(err));
 };
