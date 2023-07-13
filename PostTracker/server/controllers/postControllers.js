@@ -15,7 +15,7 @@ export const createPost = (req, res) => {
 // http://localhost:5000/posts
 export const getAllPosts = (req, res) => {
   Post.find()
-    .then((posts) => res.status(200).json({ success: true, data: posts }))
+    .then((posts) => res.status(200).json({ success: true, posts: posts }))
     .catch((err) => console.log(err));
 };
 
@@ -24,7 +24,7 @@ export const getSinglePost = (req, res) => {
   // console.log(req.params);
   const { id } = req.params;
   Post.findById(id)
-    .then((post) => res.status(200).json({ success: true, message: post }))
+    .then((post) => res.status(200).json({ success: true, post: post }))
     .catch((err) => console.log(err));
 };
 
@@ -46,7 +46,7 @@ export const updatePost = (req, res) => {
     .catch((err) => console.log(err));
 };
 
-// http:localhost:5000/posts/:id
+// http://localhost:5000/posts/:id
 export const deletePost = (req, res) => {
   const { id } = req.params;
   Post.findByIdAndRemove(id)

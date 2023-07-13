@@ -66,11 +66,11 @@ const CreatePost = () => {
     <div>
       <h2 className="display-5 text-center">Create New Post</h2>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>Username:</label>
+        <div className="mb-3">
+          <label className="form-label">Username:</label>
           <select
             required
-            className="form-control"
+            className="form-select"
             name="username"
             value={post.username}
             onChange={handleChange}
@@ -84,8 +84,8 @@ const CreatePost = () => {
             })}
           </select>
         </div>
-        <div className="form-group">
-          <label>Description:</label>
+        <div className="mb-3">
+          <label className="form-label">Description:</label>
           <input
             type="text"
             required
@@ -95,8 +95,8 @@ const CreatePost = () => {
             onChange={handleChange}
           />
         </div>
-        <div className="form-group">
-          <label>Duration:</label>
+        <div className="mb-4">
+          <label className="form-label">Duration:</label>
           <input
             type="number"
             required
@@ -106,9 +106,13 @@ const CreatePost = () => {
             onChange={handleChange}
           />
         </div>
-        <div className="form-group">
-          <label>Date:</label>
-          <DatePicker selected={post.date} onChange={handleChangeDate} />
+        <div className="mb-3">
+          <label className="form-label me-3">Date:</label>
+          <DatePicker
+            selected={post.date}
+            onChange={handleChangeDate}
+            className="form-control"
+          />
         </div>
         <br />
         <input type="submit" value="Create Post" className="btn btn-primary" />
