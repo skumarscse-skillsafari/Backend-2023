@@ -7,7 +7,7 @@ const PostList = () => {
   console.log(posts);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/posts")
+      .get("https://light-zipper-bass.cyclic.app/posts")
       .then((res) => setPosts(res.data.posts))
       .catch((err) => console.log(err));
   }, []);
@@ -16,7 +16,7 @@ const PostList = () => {
     if (window.confirm("Are you sure to delete the post?")) {
       setPosts(posts.filter((p) => p._id !== id));
       axios
-        .delete(`http://localhost:5000/posts/${id}`)
+        .delete(`https://light-zipper-bass.cyclic.app/posts/${id}`)
         .then((res) => console.log(res.data))
         .catch((err) => console.log(err));
     }

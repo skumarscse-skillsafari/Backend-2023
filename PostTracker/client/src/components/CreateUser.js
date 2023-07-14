@@ -1,16 +1,20 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 const CreateUser = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     let user = { username: username };
     axios
-      .post("http://localhost:5000/users/add", user)
+      .post("https://light-zipper-bass.cyclic.app/users/add", user)
       .then((res) => console.log(res.data))
       .catch((err) => console.log(err));
     setUsername("");
+    alert("User added successfully");
+    navigate("/");
   };
   return (
     <div>

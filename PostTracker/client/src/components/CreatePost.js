@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 const CreatePost = () => {
+  const navigate = useNavigate();
   const [post, setPost] = useState({
     username: "",
     description: "",
@@ -12,7 +14,7 @@ const CreatePost = () => {
   });
   useEffect(() => {
     axios
-      .get("http://localhost:5000/users")
+      .get("https://light-zipper-bass.cyclic.app/users")
       .then((res) => {
         console.log(res.data);
         if (res.data.users.length > 0) {
@@ -58,9 +60,11 @@ const CreatePost = () => {
     };
 
     axios
-      .post("http://localhost:5000/posts/add", newPost)
+      .post("https://light-zipper-bass.cyclic.app/posts/add", newPost)
       .then((res) => console.log(res.data))
       .catch((err) => console.log(err));
+
+    navigate("/");
   };
   return (
     <div>

@@ -2,9 +2,10 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 const EditPost = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [post, setPost] = useState({
     username: "",
     description: "",
@@ -15,7 +16,7 @@ const EditPost = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/posts/${id}`)
+      .get(`https://light-zipper-bass.cyclic.app/posts/${id}`)
       .then((res) =>
         setPost((prev) => {
           return {
@@ -30,7 +31,7 @@ const EditPost = () => {
       .catch((err) => console.log(err));
 
     axios
-      .get("http://localhost:5000/users")
+      .get("https://light-zipper-bass.cyclic.app/users")
       .then((res) => {
         console.log(res.data);
         if (res.data.users.length > 0) {
@@ -68,17 +69,20 @@ const EditPost = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const editPost = {
-      username: post.username,
-      description: post.description,
-      duration: post.duration,
-      date: post.date,
-    };
+    if (window.confirm("Are you sure to edit the post?")) {
+      const editPost = {
+        username: post.username,
+        description: post.description,
+        duration: post.duration,
+        date: post.date,
+      };
 
-    axios
-      .put(`http://localhost:5000/posts/${id}`, editPost)
-      .then((res) => console.log(res.data))
-      .catch((err) => console.log(err));
+      axios
+        .put(`https://light-zipper-bass.cyclic.app/posts/${id}`, editPost)
+        .then((res) => console.log(res.data))
+        .catch((err) => console.log(err));
+      navigate("/");
+    }
   };
   return (
     <div>
